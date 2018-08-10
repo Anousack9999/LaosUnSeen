@@ -163,7 +163,7 @@ public class RegisterFragment extends Fragment {
                 Toast.makeText(getActivity(), "Success Upload Photo", Toast.LENGTH_SHORT).show();
                 findPathUrlPhoto();
                 createPost();
-                createDatabase();
+
                 progressDialog.dismiss();
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -234,6 +234,7 @@ public class RegisterFragment extends Fragment {
                         public void onSuccess(Uri uri) {
                             urlStrings[0] = uri.toString();
                             pathURLString = urlStrings[0];
+                            createDatabase();
                             Log.d("9AugV1", "urlStrings[0] ==> " + urlStrings[0]);
                             Log.d("9AugV1", "pathURL ==> " + pathURLString);
                         }
